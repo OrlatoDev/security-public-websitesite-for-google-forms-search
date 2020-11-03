@@ -25,7 +25,7 @@ app.get("/", function(req, res){
 })
 
 app.post("/api", function(req, res){
-    const model = Model.update(req.body, (err) => {
+    const model = Model.updateOne(req.body, (err) => {
         if (err) return res.status(400).json({
             error: true,
             message: "Error: Dados não foram cadastrados com sucesso!"
