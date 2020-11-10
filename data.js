@@ -1,13 +1,11 @@
-const GoogleSpreadsheet = require("google-spreadsheet")
-const credentials = require("./credentials.json")
-const { promisify } = require("util")
-const request = require("request")
-
-const id = "1Vw5bN7iJnokyztywpaKpMjGEqeIDj5NQEr9sbjAE8zg"
-
-var porcentagemSimPergunta1, porcentagemNaoPergunta1, porcentagemMnPergunta1, porcentagemSimPergunta2, porcentagemNaoPergunta2, porcentagemMnPergunta2, porcentagemSimPergunta3, porcentagemNaoPergunta3, porcentagemMnPergunta3, porcentagemSimPergunta4, porcentagemNaoPergunta4, porcentagemMnPergunta4, porcentagemSimPergunta5, porcentagemNaoPergunta5, porcentagemMnPergunta5, porcentagemSimPergunta6, porcentagemNaoPergunta6, porcentagemCfPergunta6
-
 const accessSheet = async() => {
+    const GoogleSpreadsheet = require("google-spreadsheet")
+    const credentials = require("./credentials.json")
+    const { promisify } = require("util")
+    const request = require("request")
+    const id = "1Vw5bN7iJnokyztywpaKpMjGEqeIDj5NQEr9sbjAE8zg"
+    var porcentagemSimPergunta1, porcentagemNaoPergunta1, porcentagemMnPergunta1, porcentagemSimPergunta2, porcentagemNaoPergunta2, porcentagemMnPergunta2, porcentagemSimPergunta3, porcentagemNaoPergunta3, porcentagemMnPergunta3, porcentagemSimPergunta4, porcentagemNaoPergunta4, porcentagemMnPergunta4, porcentagemSimPergunta5, porcentagemNaoPergunta5, porcentagemMnPergunta5, porcentagemSimPergunta6, porcentagemNaoPergunta6, porcentagemCfPergunta6
+    
     const doc = new GoogleSpreadsheet(id)
     await promisify(doc.useServiceAccountAuth)(credentials)
     const info = await promisify(doc.getInfo)()
@@ -262,7 +260,7 @@ const accessSheet = async() => {
     porcentagemCfPergunta6 = parseFloat(porcentagemCfPergunta6.toFixed(1))
 
     request.post(
-        "http://localhost:8000/api",
+        "https://seguranca-publica-jundiai.herokuapp.com/api",
         {
             json: {
                 "pergunta1": "Você se sente seguro(a) em seu bairro?",
@@ -301,5 +299,5 @@ const accessSheet = async() => {
         }
     )
 }
-accessSheet()
 
+accessSheet()

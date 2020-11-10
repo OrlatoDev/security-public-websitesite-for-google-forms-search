@@ -1,4 +1,4 @@
-var url = "http://localhost:8000/apiGet"
+var url = "https://seguranca-publica-jundiai.herokuapp.com/apiGet"
 var xhttp = new XMLHttpRequest()
 xhttp.open("GET", url, false)
 xhttp.send()

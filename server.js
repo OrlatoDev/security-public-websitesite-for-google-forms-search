@@ -11,7 +11,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static('public'))
 
-mongoose.connect("mongodb://localhost/public-security", {
+mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
@@ -49,6 +49,5 @@ app.get("/apiGet", function(req, res){
     })
 })
 
-app.listen(8000, function(){
-    console.log("Server listen at port 8000...")
-})
+const PORT = process.env.PORT || 3000
+app.listen(PORT)
