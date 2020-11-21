@@ -11,7 +11,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static('public'))
 
-mongoose.connect("mongodb+srv://deploy:deployapp@cluster-public-security.udnts.mongodb.net/public-security?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://user:password@cluster-public-security.udnts.mongodb.net/public-security?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
