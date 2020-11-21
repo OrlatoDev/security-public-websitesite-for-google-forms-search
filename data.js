@@ -10,9 +10,7 @@ const accessSheet = async() => {
     await promisify(doc.useServiceAccountAuth)(credentials)
     const info = await promisify(doc.getInfo)()
     const worksheet = info.worksheets[0]
-    const rows = await promisify(worksheet.getRows)({
-
-    })
+    const rows = await promisify(worksheet.getRows)({})
 
     var senteseguro = []
     rows.forEach(row => {
@@ -60,7 +58,7 @@ const accessSheet = async() => {
     //Contar quantas vezes aparece tais respostas
 
     var simPrimeiraPergunta = []
-    var sim = "Sim"
+    var sim = "Sim" 
     var simIdxPergunta1 = senteseguro.indexOf(sim)
 
     while (simIdxPergunta1 != -1){
@@ -259,7 +257,7 @@ const accessSheet = async() => {
     porcentagemNaoPergunta6 = parseFloat(porcentagemNaoPergunta6.toFixed(1))
     porcentagemCfPergunta6 = parseFloat(porcentagemCfPergunta6.toFixed(1))
 
-    request.post(
+    request.put(
         "https://seguranca-publica-jundiai.herokuapp.com/api",
         {
             json: {
@@ -300,4 +298,4 @@ const accessSheet = async() => {
     )
 }
 
-accessSheet()
+module.exports = accessSheet()

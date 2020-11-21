@@ -106,4 +106,4 @@ const Model = new mongoose.Schema({
     timestamps: true,
 })
 
-mongoose.model('model', Model)
+mongoose.model('model', Model, "models")

@@ -8,6 +8,7 @@ var reqData = JSON.parse(xhttp.responseText)[0]
 var ctx1 = document.getElementById("chart1")
 
 var chartGraph1 = new Chart(ctx1, {
+    responsive: true,
     type: "bar",
     data: {
         labels: ["Porcentagem de Respostas"],
@@ -70,6 +71,7 @@ var chartGraph1 = new Chart(ctx1, {
 var ctx2 = document.getElementById("chart2")
 
 var chartGraph2 = new Chart(ctx2, {
+    responsive: true,
     type: "bar",
     data: {
         labels: ["Porcentagem de Respostas"],
@@ -132,6 +134,7 @@ var chartGraph2 = new Chart(ctx2, {
 var ctx3 = document.getElementById("chart3")
 
 var chartGraph3 = new Chart(ctx3, {
+    responsive: true,
     type: "bar",
     data: {
         labels: ["Porcentagem de Respostas"],
@@ -194,6 +197,7 @@ var chartGraph3 = new Chart(ctx3, {
 var ctx4 = document.getElementById("chart4")
 
 var chartGraph4 = new Chart(ctx4, {
+    responsive: true,
     type: "bar",
     data: {
         labels: ["Porcentagem de Respostas"],
@@ -256,6 +260,7 @@ var chartGraph4 = new Chart(ctx4, {
 var ctx5 = document.getElementById("chart5")
 
 var chartGraph5 = new Chart(ctx5, {
+    responsive: true,
     type: "bar",
     data: {
         labels: ["Porcentagem de Respostas"],
@@ -318,6 +323,7 @@ var chartGraph5 = new Chart(ctx5, {
 var ctx6 = document.getElementById("chart6")
 
 var chartGraph6 = new Chart(ctx6, {
+    responsive: true,
     type: "bar",
     data: {
         labels: ["Porcentagem de Respostas"],
